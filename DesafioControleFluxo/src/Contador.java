@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Contador {
     public static void main(String[] args) {
         Scanner terminal = new Scanner(System.in);
+
         System.out.println("Digite o primeiro parâmetro");
         int parametroUm = terminal.nextInt();
         System.out.println("Digite o segundo parâmetro");
@@ -14,6 +15,7 @@ public class Contador {
 
         } catch (ParametrosInvalidosException e) {
             // imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
+            e.printStackTrace();
             System.out.println("O segundo parâmetro deve ser maior que o primeiro");
 
         }
@@ -22,7 +24,8 @@ public class Contador {
 
     static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
         // validar se parametroUm é MAIOR que parametroDois e lançar a exceção
-        if (parametroUm < parametroDois) {
+
+        if (parametroUm > parametroDois) {
             throw new ParametrosInvalidosException();
         } else {
 
